@@ -45,7 +45,7 @@ public class JobServiceImpl implements JobService {
             return true;
         }
         catch(Exception e) {
-            return true;
+            return false;
         }
     }
 
