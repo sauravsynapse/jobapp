@@ -45,19 +45,23 @@ public class CompanyServiceImpl implements CompanyService {
         {
             Company company = companyOptional.get();
             company.setCompanyName(updatedCompany.getCompanyName());
+            company.setDescription(updatedCompany.getDescription());
+            company.setJobs(updatedCompany.getJobs());
+            companyRepository.save(company);
+            return true;
         }
         return false;
     }
 
     @Override
     public boolean deleteCompanyById(Long id) {
-        try{
+        if (companyRepository.existsById(id))
+        {
             companyRepository.deleteById(id);
             return true;
         }
-        catch(Exception e) {
+        else
             return false;
-        }
     }
 }
 
