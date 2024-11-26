@@ -58,11 +58,11 @@ public class Company {
         this.jobs = jobs;
     }
 
-    public Long getId() {
+    public Long getReviewId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setReviewId(Long reviewId) {
         this.id = id;
     }
 
