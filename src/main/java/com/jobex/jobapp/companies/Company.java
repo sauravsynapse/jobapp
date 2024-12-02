@@ -8,7 +8,6 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-
 public class Company {
 
     @Id
@@ -21,10 +20,19 @@ public class Company {
     @OneToMany(mappedBy = "company")
     private List<Job> jobs;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "company")
     private List<Review> reviews;
 
     public Company() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public List<Review> getReviews() {
